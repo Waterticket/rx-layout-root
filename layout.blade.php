@@ -26,12 +26,12 @@
         <ul>
           @forelse($main_menu->list as $menu_item)
             <li class="gnb-item {{ !empty($menu_item['list']) ? 'has-submenu' : '' }}">
-              <a href="{{ $menu_item['href'] }}">{{ $menu_item['text'] }}</a>
+              <a href="{{ $menu_item['href'] }}" @if($menu_item['open_window'] === 'Y') target="_blank" @endif>{{ $menu_item['text'] }}</a>
               @if(!empty($menu_item['list']))
                 <div class="submenu">
                   <div class="submenu-title">{{ $menu_item['text'] }}</div>
                   @foreach($menu_item['list'] as $child_item)
-                    <a href="{{ $child_item['href'] }}">{{ $child_item['text'] }}</a>
+                    <a href="{{ $child_item['href'] }}" @if($menu_item['open_window'] === 'Y') target="_blank" @endif>{{ $child_item['text'] }}</a>
                   @endforeach
                 </div>
               @endif
@@ -98,11 +98,11 @@
           </button>
           <ul class="mobile-submenu">
             @foreach($menu_item['list'] as $child_item)
-              <li><a href="{{ $child_item['href'] }}">{{ $child_item['text'] }}</a></li>
+              <li><a href="{{ $child_item['href'] }}" @if($menu_item['open_window'] === 'Y') target="_blank" @endif>{{ $child_item['text'] }}</a></li>
             @endforeach
           </ul>
         @else
-          <a href="{{ $menu_item['href'] }}">{{ $menu_item['text'] }}</a>
+          <a href="{{ $menu_item['href'] }}" @if($menu_item['open_window'] === 'Y') target="_blank" @endif>{{ $menu_item['text'] }}</a>
         @endif
       </li>
     @empty
