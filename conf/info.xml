@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+    <title xml:lang="ko">Root</title>
+    <description xml:lang="ko">개발용 레이아웃입니다.</description>
+    <version>1.0</version>
+    <date>2025-11-06</date>
+    <author email_address="waterticket@potatosoft.kr" link="https://potatosoft.kr">
+        <name xml:lang="ko">Waterticket</name>
+    </author>
+    <extra_vars>
+        <group>
+            <title xml:lang="ko">레이아웃 기본설정</title>
+            <var name="logo_img" type="image">
+                <title xml:lang="ko">기본형 로고 이미지</title>
+            </var>
+            <var name="logo_url" type="text">
+                <title xml:lang="ko">사이트 로고 링크 주소</title>
+            </var>
+            <var name="logo_text" type="text">
+                <title xml:lang="ko">사이트 로고 문자</title>
+            </var>
+
+            <var name="login_option" type="radio">
+                <title xml:lang="ko">로그인 방식</title>
+                <description xml:lang="ko">사용자가 로그인할 때 사용할 방식을 선택합니다.</description>
+
+                <options value="">
+                    <title xml:lang="ko">이메일(기본값)</title>
+                </options>
+                <options value="id">
+                    <title xml:lang="ko">아이디</title>
+                </options>
+            </var>
+
+            <var name="use_notification" type="radio">
+                <title xml:lang="ko">알림 사용</title>
+                <description xml:lang="ko">상단에 알림 박스를 추가합니다.</description>
+
+                <options value="">
+                    <title xml:lang="ko">사용(기본값)</title>
+                </options>
+                <options value="N">
+                    <title xml:lang="ko">사용안함</title>
+                </options>
+            </var>
+
+            <var name="use_search" type="radio">
+                <title xml:lang="ko">검색 사용</title>
+                <description xml:lang="ko">상단에 검색 박스를 추가합니다.</description>
+
+                <options value="">
+                    <title xml:lang="ko">사용(기본값)</title>
+                </options>
+                <options value="N">
+                    <title xml:lang="ko">사용안함</title>
+                </options>
+            </var>
+        </group>
+        <group>
+            <title xml:lang="ko">사이드바</title>
+
+            <var name="use_aside" type="radio">
+                <title xml:lang="ko">사이드바 사용</title>
+                <description xml:lang="ko">왼쪽 사이드에 컨텐츠 영역을 추가합니다.</description>
+
+                <options value="N">
+                    <title xml:lang="ko">사용안함(기본값)</title>
+                </options>
+                <options value="Y">
+                    <title xml:lang="ko">사용</title>
+                </options>
+            </var>
+
+            <var name="aside_content" type="textarea">
+                <title xml:lang="ko">컨텐츠</title>
+                <description xml:lang="ko"></description>
+            </var>
+        </group>
+    </extra_vars>
+    <menus>
+		<menu name="main_menu" maxdepth="2" default="true">
+			<title xml:lang="ko">상단 메뉴</title>
+		</menu>
+		<menu name="footer_menu" maxdepth="2" default="true">
+			<title xml:lang="ko">하단 메뉴</title>
+		</menu>
+	</menus>
+</layout>

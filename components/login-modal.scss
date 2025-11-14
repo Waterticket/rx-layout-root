@@ -1,0 +1,259 @@
+// ========================================
+// Login Modal
+// ========================================
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  padding: 1.4rem;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-container {
+    background: white;
+    border-radius: 1.1rem;
+    width: 100%;
+    max-width: 28.6rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2rem);
+    transition: transform 0.3s;
+    max-height: calc(100vh - 2.8rem);
+    overflow-y: auto;
+  }
+
+  &.active .modal-container {
+    transform: translateY(0);
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.7rem 2rem;
+    border-bottom: 1px solid #f1f3f5;
+
+    .modal-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #212529;
+      margin: 0;
+    }
+
+    .modal-close {
+      width: 2.6rem;
+      height: 2.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #868e96;
+      border-radius: 50%;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #f1f3f5;
+        color: #495057;
+      }
+
+      img, svg {
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 2rem;
+  }
+
+  // Form Styles
+  .form-group {
+    margin-bottom: 1.4rem;
+
+    .form-label {
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #495057;
+      margin-bottom: 0.6rem;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+      font-size: 1rem;
+      color: #212529;
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 0.6rem;
+      outline: none;
+      transition: all 0.2s;
+      font-family: inherit;
+
+      &::placeholder {
+        color: #adb5bd;
+      }
+
+      &:focus {
+        background: white;
+        border-color: #5865f2;
+        box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.1);
+      }
+    }
+  }
+
+  .validator-message {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 1.4rem;
+    border-radius: 0.6rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    animation: shake 0.4s ease-in-out;
+
+    img, svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    &.error {
+      background: #fee;
+      border: 1px solid #fcc;
+      color: #c00;
+
+      img, svg {
+        stroke: #c00;
+      }
+    }
+
+    span {
+      flex: 1;
+    }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-0.5rem); }
+    20%, 40%, 60%, 80% { transform: translateX(0.5rem); }
+  }
+
+  .form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.7rem;
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      user-select: none;
+
+      input[type="checkbox"] {
+        width: 1.1rem;
+        height: 1.1rem;
+        cursor: pointer;
+        accent-color: #5865f2;
+      }
+
+      span {
+        font-size: 0.9rem;
+        color: #495057;
+      }
+    }
+
+    .link-text {
+      font-size: 0.9rem;
+      color: #868e96;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #5865f2;
+      }
+    }
+  }
+
+  .btn-login {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    background: #5865f2;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+
+    &:hover {
+      background: #4752c4;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  .form-footer {
+    margin-top: 1.7rem;
+    padding-top: 1.7rem;
+    border-top: 1px solid #f1f3f5;
+    text-align: center;
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: #868e96;
+      margin-right: 0.4rem;
+    }
+
+    .link-signup {
+      font-size: 0.9rem;
+      color: #5865f2;
+      font-weight: 600;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #4752c4;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 0;
+
+    .modal-container {
+      max-width: 100%;
+      border-radius: 0;
+      max-height: 100vh;
+    }
+
+    .modal-header {
+      padding: 1.4rem 1.4rem;
+    }
+
+    .modal-body {
+      padding: 1.4rem;
+    }
+  }
+}
