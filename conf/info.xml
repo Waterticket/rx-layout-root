@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="0.2">
     <title xml:lang="ko">Root</title>
-    <description xml:lang="ko">개발용 레이아웃입니다.</description>
-    <version>1.0</version>
-    <date>2025-11-06</date>
+    <description xml:lang="ko">깔끔한 레이아웃입니다.</description>
+    <version>1.1.0</version>
+    <date>2026-02-16</date>
     <author email_address="waterticket@potatosoft.kr" link="https://potatosoft.kr">
         <name xml:lang="ko">Waterticket</name>
     </author>
@@ -29,6 +29,18 @@
                 </options>
                 <options value="id">
                     <title xml:lang="ko">아이디</title>
+                </options>
+            </var>
+
+            <var name="use_color_change_button" type="radio">
+                <title xml:lang="ko">다크모드 변경 버튼 사용</title>
+                <description xml:lang="ko">상단에 다크모드 변경 버튼을 추가합니다.</description>
+
+                <options value="">
+                    <title xml:lang="ko">사용(기본값)</title>
+                </options>
+                <options value="N">
+                    <title xml:lang="ko">사용안함</title>
                 </options>
             </var>
 
